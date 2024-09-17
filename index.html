@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丁力的个人网站</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--secondary-color);
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: var(--primary-color) 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        #showcase {
+            min-height: 400px;
+            background: url('showcase.jpg') no-repeat center center/cover;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+        #showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* 半透明黑色遮罩 */
+        }
+        #showcase .container {
+            position: relative;
+            z-index: 1;
+        }
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 文字阴影 */
+        }
+        #showcase p {
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 文字阴影 */
+        }
+        section {
+            padding: 20px 0;
+            border-bottom: #ccc solid 1px;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+        .section-content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .experience-item, .project-item, .blog-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .experience-item h3, .project-item h3, .blog-item h3 {
+            color: var(--primary-color);
+        }
+        #skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #skills li {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 3px;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        #contact input, #contact textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #contact button {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px;
+            border: 0;
+            cursor: pointer;
+        }
+        #contact button:hover {
+            background: var(--secondary-color);
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight" data-lang="name">丁力</span> 个人网站</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" data-lang="home">首页</a></li>
+                    <li><a href="#about" data-lang="about">关于我</a></li>
+                    <li><a href="#experience" data-lang="experience">工作经历</a></li>
+                    <li><a href="#skills" data-lang="skills">技能</a></li>
+                    <li><a href="#projects" data-lang="projects">项目展示</a></li>
+                    <li><a href="#blog" data-lang="blog">博客</a></li>
+                    <li><a href="#contact" data-lang="contact">联系我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1 data-lang="welcome">欢迎来到我的个人网站</h1>
+            <p data-lang="intro">我是丁力,一名软件开发与管理专家。</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-lang="about">关于我</h2>
+            <div class="section-content">
+                <p data-lang="about-content">我是一名经验丰富的软件开发和项目管理专家,在行业内有多年的工作经验。我的核心技术栈包括iOS、Swift、Kotlin、系统架构设计和数据库管理等。我擅长领导团队,解决复杂的技术问题,并推动创新。</p>
+                <h3 data-lang="education">教育背景</h3>
+                <ul>
+                    <li data-lang="education-bachelor">本科学位: 计算机科学与技术, XX大学</li>
+                    <li data-lang="education-master">研究生学位: 软件工程, YY大学</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title" data-lang="experience">工作经历</h2>
+            <div class="section-content">
+                <div class="experience-item">
+                    <h3 data-lang="kuaishou">快手</h3>
+                    <p data-lang="kuaishou-role">高级iOS开发工程师 / 技术负责人</p>
+                    <ul>
+                        <li data-lang="kuaishou-resp1">负责快手主App的核心功能开发和优化</li>
+                        <li data-lang="kuaishou-resp2">领导10人的开发团队,协调跨部门合作</li>
+                        <li data-lang="kuaishou-resp3">设计和实现大规模分布式系统架构</li>
+                        <li data-lang="kuaishou-resp4">优化App性能,提高用户体验</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title" data-lang="skills">技能</h2>
+            <div class="section-content">
+                <h3 data-lang="technical-skills">技术技能</h3>
+                <ul>
+                    <li>Swift</li>
+                    <li>Kotlin</li>
+                    <li>Objective-C</li>
+                    <li>iOS开发</li>
+                    <li>系统架构设计</li>
+                    <li>后端开发</li>
+                    <li>数据库管理</li>
+                </ul>
+                <h3 data-lang="tools-platforms">工具和平台</h3>
+                <ul>
+                    <li>Xcode</li>
+                    <li>Git</li>
+                    <li>CI/CD工具</li>
+                    <li>云服务平台</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title" data-lang="projects">项目展示</h2>
+            <div class="section-content">
+                <div class="project-item">
+                    <h3 data-lang="project1-title">快手主App优化项目</h3>
+                    <p data-lang="project1-desc">领导团队优化快手主App的性能,提高用户体验。通过重构核心模块,优化内存使用,减少了50%的崩溃率,提升了30%的启动速度。</p>
+                </div>
+                <div class="project-item">
+                    <h3 data-lang="project2-title">分布式系统架构设计</h3>
+                    <p data-lang="project2-desc">设计并实现了支持千万级用户的分布式系统架构,显著提高了系统的可扩展性和可靠性。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title" data-lang="blog">博客</h2>
+            <div class="section-content">
+                <div class="blog-item">
+                    <h3 data-lang="blog1-title">iOS 14新特性解析</h3>
+                    <p data-lang="blog1-summary">本文深入探讨了iOS 14带来的新特性,以及它们对开发者的影响...</p>
+                </div>
+                <div class="blog-item">
+                    <h3 data-lang="blog2-title">构建高性能的移动应用</h3>
+                    <p data-lang="blog2-summary">分享了我在优化快手App过程中积累的经验和最佳实践...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" data-lang="contact">联系我</h2>
+            <div class="section-content">
+                <form action="mailto:bigpin@163.com" method="post" enctype="text/plain">
+                    <input type="text" id="name" name="name" placeholder="姓名" data-lang="name" required>
+                    <input type="email" id="email" name="email" placeholder="邮箱" data-lang="email" required>
+                    <textarea id="message" name="message" placeholder="消息" data-lang="message" required></textarea>
+                    <button type="submit" data-lang="send">发送</button>
+                </form>
+                <div class="social-media">
+                    <h3 data-lang="social-media">社交媒体</h3>
+                    <a href="https://weibo.com/yourprofile" target="_blank" rel="noopener noreferrer" data-lang="weibo">微博</a>
+                    <a href="https://www.douyin.com/user/yourprofile" target="_blank" rel="noopener noreferrer" data-lang="douyin">抖音</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 丁力 / Ding Li</p>
+    </footer>
+
+    <script src="language.js"></script>
+</body>
+</html>
